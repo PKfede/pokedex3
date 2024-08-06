@@ -1,0 +1,47 @@
+.card {
+  width: 180px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.cardBackground {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: rgba(240, 248, 255, 0.349);
+  border-radius: 10px;
+  width: 100%;
+  height: 70%;
+}
+
+.cardData {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.pokeImg {
+  align-items: baseline;
+}
+
+.typeLayout {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.typeImg {
+  width: 75px;
+  height: auto;
+  margin: 5px;
+  border: solid black;
+}
+
+.card p {
+  color: black;
+}
+
+.card button {
+  background-color: transparent;
+  border: 0cap;
+}
