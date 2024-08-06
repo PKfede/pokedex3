@@ -1,9 +1,21 @@
-import React from 'react'
+import { useState } from 'react';
+import style from '../styles/search.module.css';
 
-const Search = () => {
+const Search: React.FC<{
+    setSearch: React.Dispatch<React.SetStateAction<string>>;
+}> = ({ setSearch }) => {
+    const [data, setData] = useState('');
+    const searchData = () => {
+        if (!data) {
+            setSearch('mew');
+        } else setSearch(data);
+    };
     return (
-        <div>Search</div>
-    )
-}
+        <div className={style.searchLayout}>
+            <input type="text" onChange={(e) => setData(e.target.value)} />{' '}
+            <button onClick={searchData}>Search</button>
+        </div>
+    );
+};
 
-export default Search
+export default Search;

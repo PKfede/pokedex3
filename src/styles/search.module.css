@@ -1,0 +1,13 @@
+.searchLayout{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.searchLayout input{
+    width: 100%;
+    margin: 10px;
+}
+
+.searchLayout button {
+    margin: 10px;
+}

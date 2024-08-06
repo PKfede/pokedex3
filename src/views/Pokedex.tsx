@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import List from "../components/List";
-import { Pokemon, PokemonList } from "../types/Pokemon";
-import styles from "../styles/pokedex.module.css";
-import Info from "../components/Info";
+import React, { useEffect, useState } from 'react';
+import List from '../components/List';
+import { Pokemon, PokemonList } from '../types/Pokemon';
+import styles from '../styles/pokedex.module.css';
+import Info from '../components/Info';
 
 const Pokedex = () => {
     const [list, setList] = useState<PokemonList | null>(null);
-    const [search, setSearch] = useState("");
+    const [search, setSearch] = useState('');
     const [pokemon, setPokemon] = useState<Pokemon | null>(null);
 
     const getList = async () => {
