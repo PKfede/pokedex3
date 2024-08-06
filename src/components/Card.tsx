@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import style from '../styles/card.module.css'
-import { Pokemon, Types } from '../types/Pokemon'
-import typeLibrary from '../assets/assetIndex'
+import React, { useEffect, useState } from 'react';
+import style from '../styles/card.module.css';
+import { Pokemon, Types } from '../types/Pokemon';
+import typeLibrary from '../assets/assetIndex';
 
 interface CardProps {
     val: {
-        name: string
-        url: string
-    }
-    setSearch: React.Dispatch<React.SetStateAction<string>>
+        name: string;
+        url: string;
+    };
+    setSearch: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const Card: React.FC<CardProps> = ({ val, setSearch }) => {
@@ -28,10 +28,9 @@ const Card: React.FC<CardProps> = ({ val, setSearch }) => {
     }, [val]);
 
     const onClick = () => {
-        const poke = pokemon?.name
-        if (poke)
-            setSearch(poke)
-    }
+        const poke = pokemon?.name;
+        if (poke) setSearch(poke);
+    };
 
     return (
         <div className={style.card}>
@@ -39,25 +38,29 @@ const Card: React.FC<CardProps> = ({ val, setSearch }) => {
                 <button onClick={onClick}>
                     <div className={style.cardData}>
                         <img src={pokemon?.sprites.front_default} alt="" />
-                        <p > {val.name}</p>
+                        <p> {val.name}</p>
                         <div className={style.typeLayout}>
-                            {
-                                pokemon?.types.map((val: Types) => {
-                                    return (
-                                        <img className={style.typeImg} src={typeLibrary[val.type.name as keyof typeof typeLibrary]} alt="" />
-                                    )
-                                })
-                            }
+                            {pokemon?.types.map((val: Types, index: number) => {
+                                return (
+                                    <img
+                                        key={index}
+                                        className={style.typeImg}
+                                        src={
+                                            typeLibrary[
+                                                val.type
+                                                    .name as keyof typeof typeLibrary
+                                            ]
+                                        }
+                                        alt=""
+                                    />
+                                );
+                            })}
                         </div>
                     </div>
                 </button>
-
             </div>
-
-
-
         </div>
-    )
-}
+    );
+};
 
-export default Card
+export default Card;
