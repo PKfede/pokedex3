@@ -3,6 +3,7 @@ import style from '../styles/info.module.css';
 import { Pokemon, Stat } from '../types/Pokemon';
 import Abilities from './Abilities';
 import Stats from './Stats';
+import Evolutions from './Evolutions';
 
 const Info: React.FC<{ pokemon: Pokemon }> = ({ pokemon }) => {
     return (
@@ -26,6 +27,7 @@ const Info: React.FC<{ pokemon: Pokemon }> = ({ pokemon }) => {
                 <Stats pokemon={pokemon} />
 
                 <h1>EVOLUTION</h1>
+                {pokemon.abilities && <Evolutions pokemon={pokemon} />}
             </div>
         </>
     );

@@ -58,4 +58,26 @@ interface Types {
     }
 }
 
-export { PokemonList, PokemonResult, Pokemon, Types, Ability, Stat }
+interface Species {
+    evolution_chain: {
+        url: string
+    }
+}
+
+interface EvolutionChain {
+    chain: {
+        evolves_to: EvolvesTo[]
+        species: {
+            name: string
+        }
+    }
+}
+
+interface EvolvesTo {
+    evolves_to: EvolvesTo[]
+    species: {
+        name: string
+    }
+}
+
+export { PokemonList, PokemonResult, Pokemon, Types, Ability, Stat, Species, EvolutionChain, EvolvesTo }
