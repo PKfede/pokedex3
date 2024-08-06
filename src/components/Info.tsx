@@ -6,8 +6,6 @@ import Stats from './Stats';
 import Evolutions from './Evolutions';
 
 const Info: React.FC<{ pokemon: Pokemon }> = ({ pokemon }) => {
-    console.log(pokemon.name);
-
     return (
         <>
             <div className={style.infoLayout}>

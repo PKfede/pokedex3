@@ -28,8 +28,6 @@ const Evolutions: React.FC<{ pokemon: Pokemon }> = ({ pokemon }) => {
 
         dataEvo.push(data.chain.species.name);
 
-        console.log(data.chain);
-
         if (data.chain.evolves_to.length > 0) {
             dataEvo.push(data.chain.evolves_to[0].species.name);
             if (data.chain.evolves_to[0].evolves_to.length > 0) {

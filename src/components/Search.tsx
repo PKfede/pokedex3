@@ -9,10 +9,21 @@ const Search: React.FC<{
         if (!data) {
             setSearch('mew');
         } else setSearch(data);
+
+        setData('');
+    };
+
+    const handleSearch = (val: string) => {
+        setData(val);
     };
     return (
         <div className={style.searchLayout}>
-            <input type="text" onChange={(e) => setData(e.target.value)} />{' '}
+            <input
+                type="text"
+                placeholder="Search Pokemon"
+                onChange={(e) => handleSearch(e.target.value)}
+                value={data}
+            />{' '}
             <button onClick={searchData}>Search</button>
         </div>
     );
