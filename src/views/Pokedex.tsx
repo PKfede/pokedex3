@@ -8,10 +8,11 @@ const Pokedex = () => {
     const [list, setList] = useState<PokemonList | null>(null);
     const [search, setSearch] = useState('');
     const [pokemon, setPokemon] = useState<Pokemon | null>(null);
+    const [offset, setOffset] = useState(0);
 
     const getList = async () => {
         const fetchData = await fetch(
-            `https://pokeapi.co/api/v2/pokemon?offset=0&limit=9`
+            `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=9`
         );
         const data: PokemonList = await fetchData.json();
         setSearch(data?.results[0].name);
@@ -29,7 +30,7 @@ const Pokedex = () => {
 
     useEffect(() => {
         getList();
-    }, []);
+    }, [offset]);
 
     useEffect(() => {
         if (list) {
@@ -40,7 +41,14 @@ const Pokedex = () => {
     return (
         <>
             <div className={styles.pokedexLayout}>
-                {list && <List list={list} setSearch={setSearch} />}
+                {list && (
+                    <List
+                        list={list}
+                        setSearch={setSearch}
+                        offset={offset}
+                        setOffset={setOffset}
+                    />
+                )}
                 {pokemon && <Info pokemon={pokemon} />}
             </div>
         </>

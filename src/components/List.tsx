@@ -3,13 +3,17 @@ import { PokemonList, PokemonResult } from '../types/Pokemon';
 import Card from './Card';
 import style from '../styles/list.module.css';
 import Search from './Search';
+import Pagination from './Pagination';
 
 interface ListProps {
     list: PokemonList;
     setSearch: React.Dispatch<React.SetStateAction<string>>;
+    setOffset: React.Dispatch<React.SetStateAction<number>>;
+    offset: number;
 }
 
-const List: React.FC<ListProps> = ({ list, setSearch }) => {
+const List: React.FC<ListProps> = ({ list, setSearch, setOffset, offset }) => {
+    const count = list.count;
     return (
         <>
             <div>
@@ -27,6 +31,11 @@ const List: React.FC<ListProps> = ({ list, setSearch }) => {
                         );
                     })}
                 </div>
+                <Pagination
+                    offset={offset}
+                    setOffset={setOffset}
+                    count={count}
+                />
             </div>
         </>
     );
