@@ -1,6 +1,6 @@
 .pokedexLayout {
-  display: flex;
-  justify-content: center;
-  background-color: rgba(0, 255, 255, 0.192);
-  height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 255, 255, 0.192);
+    height: 900px;
 }

@@ -65,8 +65,10 @@ const Pagination: React.FC<PaginationProps> = ({
     console.log(page);
 
     return (
-        <div>
-            <button onClick={handlePrev}>Prev</button>
+        <div className={styles.PaginationLayout}>
+            <button className={styles.NextAndPrev} onClick={handlePrev}>
+                Prev
+            </button>
             {pageInterval &&
                 pageInterval.map((val: number) => {
                     return (
@@ -87,7 +89,9 @@ const Pagination: React.FC<PaginationProps> = ({
                         </button>
                     );
                 })}
-            <button onClick={handleNext}>Next</button>
+            <button className={styles.NextAndPrev} onClick={handleNext}>
+                Next
+            </button>
         </div>
     );
 };

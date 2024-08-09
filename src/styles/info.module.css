@@ -1,30 +1,33 @@
 .infoLayout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(255, 228, 196, 0.37);
-  width: 400px;
-  margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 228, 196, 0.37);
+    width: 400px;
+    height: 750px;
+    margin-top: 40px;
 }
 
-.infoImg{
-width: 150px;
+.infoImg {
+    width: 150px;
 }
-.infoAbilities{
-display: flex;
+.infoAbilities {
+    display: flex;
 }
-.infoAbilities p{
-  border: solid black;
-  padding: 10px;
-  margin: 10px;
+.infoAbilities p {
+    border: solid black;
+    padding: 10px;
+    margin: 10px;
 }
-.infoStats{
-  display: flex;
-  width: 310px;
-  justify-content: center;
-
+.infoStats {
+    display: flex;
+    width: 310px;
+    justify-content: center;
 }
 .infoStats p {
-  margin: 10px;
+    margin: 10px;
 }
 
+h1 {
+    font-size: medium;
+}

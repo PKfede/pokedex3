@@ -1,7 +1,23 @@
-.active{
-background-color: aqua;
+.active {
+    background-color: rgb(116, 116, 116);
+    width: 50px;
+    margin: 10px;
 }
 
-.inactive{
-    background-color: brown;
+.inactive {
+    background-color: rgb(255, 255, 255);
+    width: 50px;
+    margin: 10px;
+    color: black;
+}
+
+.PaginationLayout {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.NextAndPrev {
+    width: 100px;
+    margin: 10px;
 }

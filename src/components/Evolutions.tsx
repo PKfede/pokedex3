@@ -1,5 +1,6 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { EvolutionChain, EvolvesTo, Pokemon, Species } from '../types/Pokemon';
+import style from '../styles/evolution.module.css';
 
 const Evolutions: React.FC<{ pokemon: Pokemon }> = ({ pokemon }) => {
     const [arrEvo, setArrEvo] = useState<string[]>([]);
@@ -59,7 +60,7 @@ const Evolutions: React.FC<{ pokemon: Pokemon }> = ({ pokemon }) => {
     }, [arrEvo]);
 
     return (
-        <div>
+        <div className={style.EvolutionLayout}>
             <div>
                 {arrImg.map((val: Pokemon, index: number) => {
                     return (
